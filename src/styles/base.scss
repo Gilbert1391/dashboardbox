@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.active-class {
+  background-color: rgb(8, 107, 198) !important;
+  color: #fff !important;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.6rem;
+  color: #222;
+  font-weight: 400;
+  line-height: 1.4;
+  background-image: linear-gradient(to right bottom, #ff3366, #ba265d);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}

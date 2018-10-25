@@ -1,0 +1,35 @@
+.card {
+  width: calc(100% / 4);
+  margin-bottom: 2rem;
+
+  &__inner-wrapper {
+    width: 75%;
+    font-size: 1.2rem;
+    position: relative;
+    cursor: pointer;
+  }
+
+  &__img {
+    width: 100%;
+    border-radius: 0.8rem;
+  }
+
+  &__title {
+    font-weight: 700;
+  }
+
+  &__rating {
+    position: absolute;
+    right: 1rem;
+    top: -0.5rem;
+    background-color: #fbe60a;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.3rem;
+  }
+
+  &__icon {
+    // font-size: 1rem;
+    margin-right: 0.3rem;
+  }
+}
