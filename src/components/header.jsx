@@ -1,7 +1,7 @@
 import React from "react";
 import Dropdown from "./dropdown";
 
-const Header = ({ value, onSearch, onValueSelect, inputValue }) => {
+const Header = ({ value, onSearch, onValueSelect, sortValue }) => {
   return (
     <header className="header">
       <span className="header__logo-name">Dashbord Box</span>
@@ -17,7 +17,7 @@ const Header = ({ value, onSearch, onValueSelect, inputValue }) => {
           <i className="search__icon fa fa-search" />
         </button>
       </form>
-      <Dropdown inputValue={inputValue} onValueSelect={onValueSelect} />
+      <Dropdown sortValue={sortValue} onValueSelect={onValueSelect} />
     </header>
   );
 };

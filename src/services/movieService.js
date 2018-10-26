@@ -2,14 +2,12 @@ export const popularMoviesData = [];
 export const topRatedMovies = [];
 export const nowPlayingMovies = [];
 
-let popularQuery =
-  "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=68f7e49d39fd0c0a1dd9bd094d9a8c75&page=";
+const url = "https://api.themoviedb.org/3/";
+const key = "68f7e49d39fd0c0a1dd9bd094d9a8c75";
 
-let topRatedQuery =
-  "https://api.themoviedb.org/3/movie/top_rated?api_key=68f7e49d39fd0c0a1dd9bd094d9a8c75&language=en-US&page=";
-
-let theatersQuery =
-  "https://api.themoviedb.org/3/movie/now_playing?api_key=68f7e49d39fd0c0a1dd9bd094d9a8c75&language=en-US&page=";
+let popular = `${url}discover/movie?sort_by=popularity.desc&api_key=${key}&page=`;
+let topRated = `${url}movie/top_rated?api_key=${key}&language=en-US&page=`;
+let theaters = `${url}movie/now_playing?api_key=${key}&language=en-US&page=`;
 
 function pushQuery(arr, str) {
   for (let i = 1; i < 11; i++) {
@@ -17,6 +15,6 @@ function pushQuery(arr, str) {
   }
 }
 
-pushQuery(popularMoviesData, popularQuery);
-pushQuery(topRatedMovies, topRatedQuery);
-pushQuery(nowPlayingMovies, theatersQuery);
+pushQuery(popularMoviesData, popular);
+pushQuery(topRatedMovies, topRated);
+pushQuery(nowPlayingMovies, theaters);

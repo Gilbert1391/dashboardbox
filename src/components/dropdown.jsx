@@ -1,6 +1,6 @@
 import React from "react";
 
-const Dropdown = ({ inputValue, onValueSelect }) => {
+const Dropdown = ({ sortValue, onValueSelect }) => {
   // const values = [
   //   { id: 1, name: "Popularity" },
   //   { id: 2, name: "Top Rated" },
@@ -13,7 +13,7 @@ const Dropdown = ({ inputValue, onValueSelect }) => {
         type="submit"
         id="dropdown-input"
         className="dropdown__input"
-        value={inputValue}
+        value={sortValue}
       />
       <ul className="dropdown__content">
         <li

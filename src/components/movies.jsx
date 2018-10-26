@@ -22,7 +22,7 @@ class Movies extends Component {
     currentPage: 1,
     selectedGenre: null,
     searchQuery: "",
-    inputValue: "Popularity"
+    sortValue: "Popularity"
   };
 
   async componentDidMount() {
@@ -74,8 +74,8 @@ class Movies extends Component {
     return getGenres().map(m => (m.id === movie.genre_ids[0] ? m.name : null));
   };
 
-  handleInputValue = value => {
-    this.setState({ inputValue: value, currentPage: 1 });
+  handleSortValue = value => {
+    this.setState({ sortValue: value, currentPage: 1 });
   };
 
   render() {
@@ -88,14 +88,14 @@ class Movies extends Component {
       currentPage,
       selectedGenre,
       searchQuery,
-      inputValue
+      sortValue
     } = this.state;
 
     let allMovies = popularMovies;
 
-    if (inputValue === "Top Rated") {
+    if (sortValue === "Top Rated") {
       allMovies = topMovies;
-    } else if (inputValue === "Now Playing") {
+    } else if (sortValue === "Now Playing") {
       allMovies = theaterMovies;
     }
 
@@ -116,8 +116,8 @@ class Movies extends Component {
         <Header
           value={searchQuery}
           onSearch={this.handleSearch}
-          onValueSelect={this.handleInputValue}
-          inputValue={this.state.inputValue}
+          onValueSelect={this.handleSortValue}
+          sortValue={sortValue}
         />
         <div className="flex-container">
           <SideBar

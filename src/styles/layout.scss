@@ -41,6 +41,13 @@
   flex-wrap: wrap;
 }
 
+.flex-center {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .sidebar {
   background-color: #333;
   flex: 0 0 18%;
