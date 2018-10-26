@@ -22,10 +22,13 @@
 }
 
 .flex-container {
+  width: 100%;
+  min-height: 50rem;
   display: flex;
 }
 
 .content-flex {
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding: 3.5rem;

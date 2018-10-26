@@ -24,10 +24,12 @@ export function getGenres() {
   return genres.filter(g => g);
 }
 
-// export const getGenres = data =>
-//   data.map(({ title, genre_ids }) => {
-//     const genreNames = genre_ids.map(
-//       gid => genres.find(({ id }) => id === gid).name
-//     );
-//     return genreNames[0];
-//   });
+/*
+const getGenres = data =>
+  data.map(({ title, genre_ids }) => {
+    const genreNames = genre_ids.map(
+      gid => genres.find(({ id }) => id === gid).name
+    );
+    return genreNames[0];
+  });
+  */
