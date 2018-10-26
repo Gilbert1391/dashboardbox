@@ -1,6 +1,7 @@
 import React from "react";
+import Dropdown from "./dropdown";
 
-const Header = ({ value, onSearch }) => {
+const Header = ({ value, onSearch, onValueSelect, inputValue }) => {
   return (
     <header className="header">
       <span className="header__logo-name">Dashbord Box</span>
@@ -8,7 +9,7 @@ const Header = ({ value, onSearch }) => {
         <input
           className="search__input"
           type="text"
-          placeholder="Search movies..."
+          placeholder="Search Movies..."
           value={value}
           onChange={e => onSearch(e.currentTarget.value)}
         />
@@ -16,6 +17,7 @@ const Header = ({ value, onSearch }) => {
           <i className="search__icon fa fa-search" />
         </button>
       </form>
+      <Dropdown inputValue={inputValue} onValueSelect={onValueSelect} />
     </header>
   );
 };
