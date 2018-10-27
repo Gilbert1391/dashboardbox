@@ -22,7 +22,9 @@ class Movies extends Component {
     currentPage: 1,
     selectedGenre: null,
     searchQuery: "",
-    sortValue: "Popularity"
+    sortValue: "Popularity",
+    loading: true,
+    bounce: true
   };
 
   async componentDidMount() {
@@ -64,6 +66,7 @@ class Movies extends Component {
 
   handleGenreSelect = genre => {
     this.setState({ selectedGenre: genre, currentPage: 1, searchQuery: "" });
+    this.handleLoader(genre);
   };
 
   handleSearch = query => {
@@ -78,6 +81,19 @@ class Movies extends Component {
     this.setState({ sortValue: value, currentPage: 1 });
   };
 
+  handleLoader = item => {
+    let { selectedGenre, loading, bounce } = this.state;
+    if (item === selectedGenre) {
+      loading = false;
+      bounce = false;
+    } else {
+      loading = true;
+      bounce = true;
+    }
+    setTimeout(() => this.setState({ loading: false }), 1000);
+    this.setState({ loading, bounce });
+  };
+
   render() {
     const {
       popularMovies,
@@ -88,7 +104,9 @@ class Movies extends Component {
       currentPage,
       selectedGenre,
       searchQuery,
-      sortValue
+      sortValue,
+      loading,
+      bounce
     } = this.state;
 
     let allMovies = popularMovies;
@@ -110,7 +128,6 @@ class Movies extends Component {
     }
 
     const movies = paginate(filtered, currentPage, pageSize);
-
     return (
       <div className="container">
         <Header
@@ -126,7 +143,12 @@ class Movies extends Component {
             onItemSelect={this.handleGenreSelect}
           />
           <div className="content-flex">
-            <MovieCard movies={movies} showGenres={this.handleGenres} />
+            <MovieCard
+              movies={movies}
+              showGenres={this.handleGenres}
+              loading={loading}
+              bounceEffect={bounce}
+            />
             <Pagination
               numberOfItems={filtered.length}
               pageSize={pageSize}
