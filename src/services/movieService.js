@@ -1,6 +1,6 @@
-export const popularMoviesData = [];
+export const popularMovies = [];
 export const topRatedMovies = [];
-export const nowPlayingMovies = [];
+export const theaterMovies = [];
 
 const url = "https://api.themoviedb.org/3/";
 const key = "68f7e49d39fd0c0a1dd9bd094d9a8c75";
@@ -15,6 +15,6 @@ function pushQuery(arr, str) {
   }
 }
 
-pushQuery(popularMoviesData, popular);
+pushQuery(popularMovies, popular);
 pushQuery(topRatedMovies, topRated);
-pushQuery(nowPlayingMovies, theaters);
+pushQuery(theaterMovies, theaters);
