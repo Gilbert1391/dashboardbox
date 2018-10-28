@@ -129,7 +129,7 @@ class Movies extends Component {
 
     const movies = paginate(filtered, currentPage, pageSize);
     return (
-      <div className="container">
+      <React.Fragment>
         <Header
           value={searchQuery}
           onSearch={this.handleSearch}
@@ -157,7 +157,7 @@ class Movies extends Component {
             />
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

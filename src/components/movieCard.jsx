@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import { Fade, Bounce } from "react-reveal";
 import placeholderImg from "../img/placeholder-img.jpg";
@@ -37,8 +38,8 @@ const MovieCard = ({ movies, showGenres, loading, bounceEffect }) => {
     <div className="flex-grid">
       {movies.map(movie => (
         <Fade key={movie.id}>
-          <div className="card" key={movie.id}>
-            <div className="card__inner-wrapper">
+          <div className="card" to={`movie/${movie.id}`}>
+            <Link to={`/movie/${movie.id}`} className="card__inner-wrapper">
               <img
                 className="card__img"
                 src={
@@ -54,7 +55,7 @@ const MovieCard = ({ movies, showGenres, loading, bounceEffect }) => {
               </div>
               <p className="card__title">{movie.title}</p>
               <p className="card__genre">{showGenres(movie)}</p>
-            </div>
+            </Link>
           </div>
         </Fade>
       ))}
