@@ -3,7 +3,7 @@ export const topRatedMovies = [];
 export const theaterMovies = [];
 
 const url = "https://api.themoviedb.org/3/";
-const key = "68f7e49d39fd0c0a1dd9bd094d9a8c75";
+export const key = "68f7e49d39fd0c0a1dd9bd094d9a8c75";
 
 let popular = `${url}discover/movie?sort_by=popularity.desc&api_key=${key}&page=`;
 let topRated = `${url}movie/top_rated?api_key=${key}&language=en-US&page=`;
