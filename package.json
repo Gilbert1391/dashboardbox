@@ -15,6 +15,7 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5",
     "react-spinners": "^0.4.7",
+    "react-star-rating-component": "^1.4.1",
     "react-toastify": "^4.1.0"
   },
   "scripts": {

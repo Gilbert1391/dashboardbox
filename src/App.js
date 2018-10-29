@@ -133,7 +133,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <ToastContainer />
-        <main className="container">
+        <main>
           <Switch>
             <Route path="/movie/:id" component={Dashboard} />
             <Route path="/not-found" component={notFound} />

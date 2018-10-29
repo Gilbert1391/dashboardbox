@@ -1,0 +1,60 @@
+.dashboard-bg {
+  width: 100vw;
+  height: 100vh;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(1.1);
+  position: fixed;
+}
+
+.dashboard {
+  width: 100rem;
+  height: 50rem;
+  color: #fff;
+  border: 1px solid red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  display: flex;
+  padding: 1rem;
+
+  &__img-wrapper {
+    height: 100%;
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+  }
+
+  &__content {
+    width: 100%;
+    padding-left: 5rem;
+    border: 1px solid blue;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    text-transform: uppercase;
+  }
+  &__genres {
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+  }
+}

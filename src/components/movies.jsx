@@ -26,7 +26,7 @@ const Movies = props => {
   const movies = paginate(filtered, currentPage, pageSize);
 
   return (
-    <React.Fragment>
+    <div className="container">
       <Header
         value={searchQuery}
         onSearch={onSearch}
@@ -54,7 +54,7 @@ const Movies = props => {
           />
         </div>
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 
