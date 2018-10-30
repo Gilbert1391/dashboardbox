@@ -10,8 +10,8 @@
   }
 
   &__img-wrapper {
-    width: 8rem;
-    height: 8rem;
+    width: 7rem;
+    height: 7rem;
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     position: relative;
@@ -22,6 +22,10 @@
     transform: translateY(-1rem);
     backface-visibility: hidden;
     transition: all 500ms;
+
+    &--last {
+      filter: blur(3px) brightness(80%);
+    }
   }
 
   &__caption {
@@ -35,6 +39,12 @@
     opacity: 0;
     backface-visibility: hidden;
     transition: all 500ms;
+
+    &--last {
+      font-size: 1.3rem;
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
   }
 
   &__img-wrapper:hover &__caption {

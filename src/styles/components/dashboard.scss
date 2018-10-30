@@ -48,13 +48,13 @@
   &__content {
     width: 100%;
     padding-left: 5rem;
-    //border: 1px solid blue;
+    // border: 1px solid blue;
   }
 
   &__group {
     display: flex;
     flex-direction: column;
-    // border: 1px solid orangered;
+    font-size: 1.4rem;
 
     &:not(last-child) {
       margin-bottom: 3rem;
