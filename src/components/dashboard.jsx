@@ -4,34 +4,44 @@ import { Fade } from "react-reveal";
 import http from "../services/httpService";
 import StarRatingComponent from "react-star-rating-component";
 
-const url = "https://api.themoviedb.org/3/movie/";
+const apiUrl = "https://api.themoviedb.org/3/movie/";
 
 class Dashboard extends Component {
   state = {
-    movie: [],
-    genres: []
+    movie: {},
+    genres: [],
+    cast: [],
+    fixed_rating: null
   };
 
   async componentDidMount() {
-    const queryString = `${url}${this.props.match.params.id}?api_key=${key}`;
+    const queryString = `${apiUrl}${
+      this.props.match.params.id
+    }?api_key=${key}&append_to_response=credits`;
 
     const { data: movie } = await http.get(queryString);
     const genres = movie.genres;
+    const cast = movie.credits.cast;
+    const fixed_rating = movie.vote_average.toFixed(1);
 
-    this.setState({ movie, genres });
+    this.setState({ movie, genres, cast, fixed_rating });
   }
 
   render() {
-    const { movie, genres } = this.state;
+    const { movie, genres, cast, fixed_rating } = this.state;
+    const newCast = cast.slice(0, 5);
+    console.log(newCast);
 
     const bgImg = {
       backgroundImage: `url(https://image.tmdb.org/t/p/w1280${
         movie.backdrop_path
       })`
     };
+
     return (
       <React.Fragment>
         <div style={bgImg} className="dashboard-bg" />
+        <div className="dashboard-bg__layer" />
         <div className="dashboard">
           <Fade>
             <div className="dashboard__img-wrapper">
@@ -55,13 +65,41 @@ class Dashboard extends Component {
                   <StarRatingComponent
                     name="rate"
                     value={movie.vote_average > 9 ? 10 : movie.vote_average / 2}
+                    startColor={"rgb(255, 188, 38)"}
+                    emptyStarColor={"#f4f2f2"}
                   />
-                  <span>{movie.vote_average} User Score</span>
+                  <p className="dashboard__user-rating">{fixed_rating} </p>
                 </div>
               </div>
-              <div className="dasboard__group">
+              <div className="dashboard__group">
                 <h3 className="dashboard__terciary-heading">Overview</h3>
                 <p>{movie.overview}</p>
+              </div>
+              <div className="dashboard__group">
+                <h3 className="dashboard__terciary-heading">The cast</h3>
+                <div className="cast">
+                  {newCast.map(el => (
+                    <a
+                      key={el.cast_id}
+                      href={`https://www.themoviedb.org/person/${el.id}`}
+                      target="_blank"
+                      className="cast__item"
+                    >
+                      <figure className="cast__img-wrapper">
+                        <img
+                          src={`https://image.tmdb.org/t/p/w185${
+                            el.profile_path
+                          }`}
+                          alt=""
+                          className="cast__img"
+                        />
+                        <figcaption className="cast__caption">
+                          {el.name}
+                        </figcaption>
+                      </figure>
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </Fade>

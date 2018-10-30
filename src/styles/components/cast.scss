@@ -1,0 +1,48 @@
+.cast {
+  width: 100%;
+  display: flex;
+
+  &__item {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    margin-right: 2.5rem;
+  }
+
+  &__img-wrapper {
+    width: 8rem;
+    height: 8rem;
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    position: relative;
+  }
+
+  &__img {
+    width: 100%;
+    transform: translateY(-1rem);
+    backface-visibility: hidden;
+    transition: all 500ms;
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.8rem;
+    opacity: 0;
+    backface-visibility: hidden;
+    transition: all 500ms;
+  }
+
+  &__img-wrapper:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &__img-wrapper:hover &__img {
+    filter: blur(3px) brightness(80%);
+  }
+}
