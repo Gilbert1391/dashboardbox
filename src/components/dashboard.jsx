@@ -13,6 +13,7 @@ const apiUrl = "https://api.themoviedb.org/3/movie/";
 class Dashboard extends Component {
   state = {
     movie: {},
+    trailer: {},
     genres: [],
     allCast: [],
     fixed_rating: null,
@@ -29,7 +30,11 @@ class Dashboard extends Component {
     const allCast = movie.credits.cast;
     const fixed_rating = movie.vote_average.toFixed(1);
 
-    this.setState({ movie, genres, allCast, fixed_rating });
+    const videoUrl = `${apiUrl}${movie.id}/videos?api_key=${key}`;
+    const { data: videos } = await http.get(videoUrl);
+    const trailer = videos.results[0];
+
+    this.setState({ movie, trailer, genres, allCast, fixed_rating });
   }
 
   handleLoader() {
@@ -37,7 +42,14 @@ class Dashboard extends Component {
   }
 
   render() {
-    const { movie, genres, allCast, fixed_rating, loading } = this.state;
+    const {
+      movie,
+      trailer,
+      genres,
+      allCast,
+      fixed_rating,
+      loading
+    } = this.state;
     const cast = allCast.slice(0, 5);
     const viewCast = allCast.length - cast.length;
 
@@ -100,6 +112,17 @@ class Dashboard extends Component {
                     emptyStarColor={"#f4f2f2"}
                   />
                   <p className="dashboard__user-rating">{fixed_rating} </p>
+                  {!trailer ? (
+                    ""
+                  ) : (
+                    <a
+                      href={`https://www.youtube.com/watch?v=${trailer.key}`}
+                      target="_blank"
+                      className="dashboard__btn"
+                    >
+                      Watch Trailer
+                    </a>
+                  )}
                 </div>
               </div>
               <div className="dashboard__group">
