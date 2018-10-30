@@ -12,7 +12,7 @@ const MovieCard = ({ movies, showGenres, loading, bounceEffect }) => {
           <ClipLoader
             sizeUnit={"px"}
             size={50}
-            color={"#ec3866"}
+            color={"#faca31"}
             loading={loading}
           />
         </div>

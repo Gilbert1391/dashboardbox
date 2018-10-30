@@ -9,7 +9,7 @@
     font-family: inherit;
     font-size: inherit;
     color: inherit;
-    background-color: #f4f2f2;
+    background-color: #1c223a;
     border: none;
     padding: 0.7rem 2rem;
     border-radius: 10rem;
@@ -20,22 +20,21 @@
     &:focus {
       width: 100%;
       outline: none;
-      background-color: #f0eeee;
     }
 
     &::-webkit-input-placeholder {
-      color: #ccc;
+      color: #737783;
       font-weight: 100;
     }
   }
 
   &__input:focus + &__button {
-    background-color: #f0eeee;
+    background-color: #1c223a;
   }
 
   &__button {
     border: none;
-    background-color: #f4f2f2;
+    background-color: #1c223a;
     font-size: 1.6rem;
 
     &:focus {
@@ -50,6 +49,6 @@
   &__icon {
     height: 2rem;
     width: 2rem;
-    color: #999;
+    color: #737783;
   }
 }

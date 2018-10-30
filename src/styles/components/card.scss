@@ -9,7 +9,7 @@
     cursor: pointer;
     display: inline-block;
     text-decoration: none;
-    color: #333333;
+    color: #737783;
   }
 
   &__img {
@@ -20,13 +20,16 @@
 
   &__title {
     font-weight: 700;
+    color: #edf2f5;
+    margin-top: 0.5rem;
   }
 
   &__rating {
     position: absolute;
     right: 1rem;
     top: -0.5rem;
-    background-color: #fbe60a;
+    color: #242126;
+    background-color: #faca31;
     font-size: 0.7rem;
     padding: 0.3rem 0.5rem;
     border-radius: 0.3rem;

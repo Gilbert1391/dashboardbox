@@ -1,7 +1,6 @@
 .container {
   max-width: 120rem;
   margin: 8rem auto;
-  background-color: #faf9f9;
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
   min-height: 50rem;
   border-radius: 1.5rem;
@@ -15,8 +14,7 @@
 .header {
   height: 7rem;
   font-size: 1.4rem;
-  background-color: #fff;
-  border-bottom: 1px solid #f4f2f2;
+  background-color: #0c0f26;
   display: flex;
   align-items: center;
   padding: 0 2rem;
@@ -35,7 +33,7 @@
   display: flex;
   flex-direction: column;
   padding: 3.5rem;
-  background-color: #f4f2f2;
+  background-color: #171934;
   border-bottom-right-radius: 1.5rem;
 }
 
@@ -54,7 +52,8 @@
 }
 
 .sidebar {
-  background-color: #333;
+  background-color: #0c0f26;
+  // background-color: #11142b;
   flex: 0 0 18%;
   display: flex;
   flex-direction: column;

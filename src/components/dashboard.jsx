@@ -68,7 +68,7 @@ class Dashboard extends Component {
               <ClipLoader
                 sizeUnit={"px"}
                 size={50}
-                color={"#333"}
+                color={"#faca31"}
                 loading={loading}
               />
             </div>

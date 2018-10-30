@@ -20,7 +20,7 @@
     left: 0;
     height: 100%;
     width: 3px;
-    background-color: #eb2f64;
+    background-color: #1c223a;
     transform: scaleY(0);
     transition: transform 200ms, width 400ms cubic-bezier(1, 0, 0, 1) 200ms;
   }
@@ -32,11 +32,10 @@
   }
 
   &__item:active::before {
-    background-color: #ff3366;
+    background-color: #29284e;
   }
 
   &__span {
-    color: #faf9f9;
     text-decoration: none;
     text-transform: uppercase;
     padding: 1.5rem 3rem;

@@ -12,11 +12,6 @@
 // Variables
 $border-size: 1.5rem;
 
-.active-class {
-  background-color: rgb(8, 107, 198) !important;
-  color: #fff !important;
-}
-
 html {
   box-sizing: border-box;
   font-size: 62.5%;
@@ -25,10 +20,11 @@ html {
 body {
   font-family: "Nunito", sans-serif;
   font-size: 1.6rem;
-  color: #333;
+  // color: #edf2f5;
+  color: #7678fb;
   font-weight: 400;
   line-height: 1.4;
-  background-image: linear-gradient(to right bottom, #ff3366, #ba265d);
+  background-image: linear-gradient(to right bottom, #7775a5, #3c3b66);
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
