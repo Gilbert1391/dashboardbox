@@ -82,6 +82,26 @@ class Dashboard extends Component {
         <div style={bgImg} className="dashboard-bg" />
         <div className="dashboard-bg__layer" />
         <div className="dashboard">
+          <div className="dashboard__header-bar">
+            <h1 className="dashboard__title">{movie.title}</h1>
+            <div className="dashboard__rating">
+              <StarRatingComponent
+                name="rate"
+                value={movie.vote_average > 9 ? 10 : movie.vote_average / 2}
+                starColor={"#faca31"}
+                emptyStarColor={"#f4f2f2"}
+              />
+              <p className="dashboard__user-rating">{fixed_rating} </p>
+            </div>
+          </div>
+          <div style={bgImg} className="dashboard__img">
+            <div className="dashboard__img--layer" />
+          </div>
+          <div className="dashboard__overview">
+            <p>{movie.overview}</p>
+          </div>
+        </div>
+        {/* <div className="dashboard">
           <Fade>
             <div className="dashboard__img-wrapper">
               <img
@@ -108,7 +128,7 @@ class Dashboard extends Component {
                   <StarRatingComponent
                     name="rate"
                     value={movie.vote_average > 9 ? 10 : movie.vote_average / 2}
-                    startColor={"rgb(255, 188, 38)"}
+                    starColor={"#faca31"}
                     emptyStarColor={"#f4f2f2"}
                   />
                   <p className="dashboard__user-rating">{fixed_rating} </p>
@@ -177,7 +197,7 @@ class Dashboard extends Component {
               </div>
             </div>
           </Fade>
-        </div>
+        </div> */}
       </React.Fragment>
     );
   }
