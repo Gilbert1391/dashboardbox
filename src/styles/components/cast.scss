@@ -7,11 +7,13 @@
     text-decoration: none;
     color: inherit;
     margin-right: 2.5rem;
+    border-radius: 50%;
+    box-shadow: 2px 4px 1rem #242126;
   }
 
   &__img-wrapper {
-    width: 7rem;
-    height: 7rem;
+    width: 6rem;
+    height: 6rem;
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     position: relative;

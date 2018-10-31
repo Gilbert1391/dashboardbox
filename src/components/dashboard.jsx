@@ -3,7 +3,6 @@ import { key } from "../services/movieService";
 import { Fade } from "react-reveal";
 import { ClipLoader } from "react-spinners";
 import http from "../services/httpService";
-import placeholderImg from "../img/placeholder-img.jpg";
 import profilePlaceholder from "../img/profile_placeholder.jpg";
 import profileImg from "../img/profile-pic.jpeg";
 import StarRatingComponent from "react-star-rating-component";
@@ -59,7 +58,7 @@ class Dashboard extends Component {
       })`
     };
 
-    if (!movie.poster_path && loading) {
+    if (!movie.backdrop_path && loading) {
       return (
         <div className="dashboard">
           {this.handleLoader()}
@@ -81,26 +80,57 @@ class Dashboard extends Component {
       <React.Fragment>
         <div style={bgImg} className="dashboard-bg" />
         <div className="dashboard-bg__layer" />
-        <div className="dashboard">
-          <div className="dashboard__header-bar">
-            <h1 className="dashboard__title">{movie.title}</h1>
-            <div className="dashboard__rating">
-              <StarRatingComponent
-                name="rate"
-                value={movie.vote_average > 9 ? 10 : movie.vote_average / 2}
-                starColor={"#faca31"}
-                emptyStarColor={"#f4f2f2"}
-              />
-              <p className="dashboard__user-rating">{fixed_rating} </p>
+        <Fade>
+          <React.Fragment>
+            <div className="dashboard">
+              <div className="dashboard__header-bar">
+                <h1 className="dashboard__title">{movie.title}</h1>
+                <div className="dashboard__rating">
+                  <StarRatingComponent
+                    name="rate"
+                    value={movie.vote_average > 9 ? 10 : movie.vote_average / 2}
+                    starColor={"#faca31"}
+                    emptyStarColor={"#242126"}
+                  />
+                  <p className="dashboard__user-rating">{fixed_rating} </p>
+                </div>
+              </div>
+              <div style={bgImg} className="dashboard__img">
+                <div className="dashboard__img--layer" />
+                {!movie.tagline ? (
+                  ""
+                ) : (
+                  <h3 className="dashboard__tagline">{`"${movie.tagline}"`}</h3>
+                )}
+              </div>
+              <div className="dashboard__body">
+                <div className="dashboard__group">
+                  <div>
+                    {genres.map(m => (
+                      <span key={m.id}>{m.name} / </span>
+                    ))}
+                    <span>{movie.release_date} / </span>
+                    <span>{`${movie.runtime}min`}</span>
+                  </div>
+                  <div>
+                    {!trailer ? (
+                      ""
+                    ) : (
+                      <a
+                        href={`https://www.youtube.com/watch?v=${trailer.key}`}
+                        target="_blank"
+                        className="dashboard__btn"
+                      >
+                        Watch Trailer
+                      </a>
+                    )}
+                  </div>
+                </div>
+                <p>{movie.overview}</p>
+              </div>
             </div>
-          </div>
-          <div style={bgImg} className="dashboard__img">
-            <div className="dashboard__img--layer" />
-          </div>
-          <div className="dashboard__overview">
-            <p>{movie.overview}</p>
-          </div>
-        </div>
+          </React.Fragment>
+        </Fade>
         {/* <div className="dashboard">
           <Fade>
             <div className="dashboard__img-wrapper">
