@@ -1,104 +1,3 @@
-/*
-.dashboard-bg {
-  width: 100vw;
-  height: 100vh;
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  transform: scale(1.1);
-  position: fixed;
-
-  &__layer {
-    // background-color: rgba(30, 30, 30, 0.7);
-    background-color: #1c223a9f;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.dashboard {
-  width: 100rem;
-  height: 50rem;
-  color: #edf2f5;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 5;
-  display: flex;
-  padding: 1rem;
-
-  &__img-wrapper {
-    height: 100%;
-  }
-
-  &__img {
-    height: 100%;
-    width: 100%;
-    border-radius: 1rem;
-  }
-
-  &__content {
-    width: 100%;
-    padding-left: 5rem;
-    // border: 1px solid blue;
-  }
-
-  &__group {
-    display: flex;
-    flex-direction: column;
-    font-size: 1.4rem;
-
-    &:not(last-child) {
-      margin-bottom: 3rem;
-    }
-  }
-
-  &__title {
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-  }
-  &__genres {
-    margin-bottom: 1.5rem;
-  }
-
-  &__rating {
-    display: flex;
-    align-items: center;
-  }
-
-  &__user-rating {
-    color: #faca31;
-    margin-left: 1rem;
-  }
-
-  &__terciary-heading {
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-  }
-
-  &__btn {
-    margin-left: 3rem;
-    border-radius: 3px;
-    padding: 0.8rem 2rem;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: 700;
-    color: #242126;
-    background-color: #faca31;
-  }
-}
-*/
-
 .dashboard-bg {
   width: 100vw;
   height: 100vh;
@@ -217,5 +116,17 @@
     padding: 0.5rem 1.8rem;
     border-radius: 2px;
     box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.3);
+  }
+
+  &__casting {
+    display: inline-block;
+    color: #edf2f5;
+    text-decoration: none;
+    transition: all 300ms;
+
+    &:hover {
+      color: #faca31;
+      text-decoration: underline;
+    }
   }
 }

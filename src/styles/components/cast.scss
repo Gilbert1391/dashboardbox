@@ -1,19 +1,19 @@
 .cast {
-  width: 100%;
+  // width: 100%;
   display: flex;
 
   &__item {
     display: block;
     text-decoration: none;
     color: inherit;
-    margin-right: 2.5rem;
+    margin-right: 1rem;
     border-radius: 50%;
-    box-shadow: 2px 4px 1rem #242126;
+    box-shadow: 0.5rem 0.2rem 1rem rgba(0, 0, 0, 0.3);
   }
 
   &__img-wrapper {
-    width: 6rem;
-    height: 6rem;
+    width: 5rem;
+    height: 5rem;
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     position: relative;
