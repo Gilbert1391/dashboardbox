@@ -35,7 +35,7 @@ const MovieCard = ({ movies, showGenres, loading, bounceEffect }) => {
   }
 
   return (
-    <div className="flex-grid">
+    <section className="flex-grid">
       {movies.map(movie => (
         <Fade key={movie.id}>
           <div className="card" to={`movie/${movie.id}`}>
@@ -59,7 +59,7 @@ const MovieCard = ({ movies, showGenres, loading, bounceEffect }) => {
           </div>
         </Fade>
       ))}
-    </div>
+    </section>
   );
 };
 

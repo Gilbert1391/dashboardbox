@@ -47,7 +47,7 @@ class Dashboard extends Component {
 
     if (!movie.backdrop_path && loading) {
       return (
-        <div className="dashboard">
+        <section className="dashboard">
           {this.handleLoader()}
           <div className="flex-center">
             <div className="sweet-loading">
@@ -59,7 +59,7 @@ class Dashboard extends Component {
               />
             </div>
           </div>
-        </div>
+        </section>
       );
     }
 
@@ -69,7 +69,7 @@ class Dashboard extends Component {
         <div className="dashboard-bg__layer" />
         <Fade>
           <React.Fragment>
-            <div className="dashboard">
+            <section className="dashboard">
               <div className="dashboard__header-bar">
                 <h1 className="dashboard__title">{movie.title}</h1>
                 <div className="dashboard__rating">
@@ -122,7 +122,7 @@ class Dashboard extends Component {
                 </div>
                 <p>{movie.overview}</p>
               </div>
-            </div>
+            </section>
           </React.Fragment>
         </Fade>
       </React.Fragment>

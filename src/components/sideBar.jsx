@@ -16,7 +16,7 @@ const SideBar = props => {
             }
             onClick={() => onItemSelect(item)}
           >
-            <span className="side-nav__span">{item.name}</span>
+            <a className="side-nav__link">{item.name}</a>
           </li>
         ))}
       </ul>

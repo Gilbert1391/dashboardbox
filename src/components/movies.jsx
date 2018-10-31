@@ -33,7 +33,7 @@ const Movies = props => {
         onValueSelect={onSortValue}
         sortValue={sortValue}
       />
-      <div className="flex-container">
+      <main className="flex-container">
         <SideBar
           items={genres}
           selectedItem={selectedGenre}
@@ -53,7 +53,7 @@ const Movies = props => {
             onPageChange={onPageChange}
           />
         </div>
-      </div>
+      </main>
     </div>
   );
 };
