@@ -31,6 +31,23 @@
   transform: translate(-50%);
   z-index: 5;
 
+  @include responsive(tab-land) {
+    height: 85vh;
+    margin-top: 7rem;
+  }
+
+  @include responsive(tab-port) {
+    width: 80rem;
+    height: 65vh;
+    margin-top: 20rem;
+  }
+
+  @include responsive(phone-land) {
+    width: 100vw;
+    height: 100%;
+    margin-top: 0;
+  }
+
   &__header-bar {
     height: 5rem;
     position: relative;
@@ -39,7 +56,7 @@
   &__title {
     width: 60%;
     position: absolute;
-    top: 1.6rem;
+    top: 2.2rem;
     left: 3rem;
     text-transform: uppercase;
     letter-spacing: 0.5rem;
@@ -53,6 +70,14 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+
+    @include responsive(phone-land) {
+      height: 55%;
+    }
+
+    @include responsive(phone) {
+      height: 60%;
+    }
 
     &--layer {
       background-color: rgba(30, 30, 30, 0.3);
@@ -85,10 +110,28 @@
     justify-content: space-between;
     align-items: center;
     margin: 1.5rem;
+
+    @include responsive(phone-land) {
+      margin: 1rem 1.5rem;
+    }
+
+    @include responsive(phone) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__btn-group {
+    display: flex;
+
+    @include responsive(phone) {
+      margin: 1.3rem 0;
+      margin-left: auto;
+    }
   }
 
   &__btn {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     border-radius: 3px;
     padding: 0.8rem 2rem;
     font-size: 1.2rem;
@@ -99,9 +142,25 @@
     background-color: #faca31;
     transition: all 300ms;
 
+    @include responsive(phone) {
+      padding: 0.4rem 1.6rem;
+    }
+
+    &--home {
+      display: flex;
+      align-items: center;
+      padding: 0.2rem 1rem;
+      margin-right: 1rem;
+      cursor: pointer;
+    }
+
     &:hover {
       background-color: hsl(46, 83%, 53%);
     }
+  }
+
+  &__icon {
+    font-size: 1.8rem;
   }
 
   &__tagline {

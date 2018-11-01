@@ -4,6 +4,8 @@ import SideBar from "./sideBar";
 import Header from "./header";
 import Pagination from "./pagination";
 import { paginate } from "../utils/paginate";
+import PhoneNav from "./phoneNav";
+import PhoneFooter from "./phoneFooter";
 
 const Movies = props => {
   const {
@@ -27,12 +29,19 @@ const Movies = props => {
 
   return (
     <div className="container">
-      <Header
-        value={searchQuery}
-        onSearch={onSearch}
-        onValueSelect={onSortValue}
-        sortValue={sortValue}
-      />
+      <div className="phone-fixed-header">
+        <Header
+          value={searchQuery}
+          onSearch={onSearch}
+          onValueSelect={onSortValue}
+          sortValue={sortValue}
+        />
+        <PhoneNav
+          items={genres}
+          selectedItem={selectedGenre}
+          onItemSelect={onGenreSelect}
+        />
+      </div>
       <main className="flex-container">
         <SideBar
           items={genres}
@@ -54,6 +63,7 @@ const Movies = props => {
           />
         </div>
       </main>
+      <PhoneFooter />
     </div>
   );
 };

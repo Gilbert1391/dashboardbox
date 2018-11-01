@@ -33,8 +33,12 @@ class Dashboard extends Component {
   }
 
   handleLoader() {
-    setTimeout(() => this.setState({ loading: false }), 1500);
+    setTimeout(() => this.setState({ loading: false }), 2000);
   }
+
+  handlerHomeBtn = () => {
+    this.props.history.push("/");
+  };
 
   render() {
     const { movie, trailer, genres, fixed_rating, loading } = this.state;
@@ -104,9 +108,21 @@ class Dashboard extends Component {
                     className="dashboard__casting"
                     target="_blank"
                   >
-                    Full Casting
+                    View Casting
                   </a>
-                  <div>
+                  <div className="dashboard__btn-group">
+                    <a
+                      onClick={this.handlerHomeBtn}
+                      className="dashboard__btn dashboard__btn--home"
+                    >
+                      <div className="dashboard__icon">
+                        <i
+                          style={{ marginRight: "0.7rem" }}
+                          className="fa fa-long-arrow-left"
+                        />
+                        <i className="fa fa-home" />
+                      </div>
+                    </a>
                     {!trailer ? (
                       ""
                     ) : (
@@ -116,6 +132,12 @@ class Dashboard extends Component {
                         className="dashboard__btn"
                       >
                         Watch Trailer
+                        <div
+                          style={{ marginLeft: "0.7rem" }}
+                          className="dashboard__icon"
+                        >
+                          <i className="fa fa-caret-right" />
+                        </div>
                       </a>
                     )}
                   </div>

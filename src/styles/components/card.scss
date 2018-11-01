@@ -2,6 +2,14 @@
   width: calc(100% / 4);
   margin-bottom: 2rem;
 
+  @include responsive(tab-port) {
+    width: calc(100% / 3);
+  }
+
+  @include responsive(phone) {
+    width: calc(100% / 2);
+  }
+
   &__inner-wrapper {
     width: 75%;
     font-size: 1.2rem;
@@ -10,6 +18,11 @@
     display: inline-block;
     text-decoration: none;
     color: #737783;
+
+    @include responsive(tab-port) {
+      display: block;
+      margin: 0 auto;
+    }
   }
 
   &__img {

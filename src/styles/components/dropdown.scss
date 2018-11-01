@@ -11,6 +11,10 @@
     border: none;
     outline: none;
     cursor: pointer;
+
+    @include responsive(phone) {
+      width: 8rem;
+    }
   }
 
   &__content {

@@ -9,12 +9,62 @@
   box-sizing: inherit;
 }
 
-// Variables
-$border-size: 1.5rem;
+// Mixin
+@mixin responsive($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    } // 600px
+  }
+
+  @if $breakpoint == phone-land {
+    @media (max-width: 46em) {
+      @content;
+    } // 736px
+  }
+
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      @content;
+    } // 900px
+  }
+
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      @content;
+    } // 1200px
+  }
+
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) {
+      @content;
+    } //1800px
+  }
+}
 
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+
+  @include responsive(tab-land) {
+    //widh < 1200px?
+    font-size: 56.25%;
+  }
+
+  @include responsive(tab-port) {
+    //widh < 900px?
+    font-size: 50%;
+  }
+
+  @include responsive(phone) {
+    //widh < 600px?
+    font-size: 43.75%;
+  }
+
+  @include responsive(big-desktop) {
+    //widh < 1800px?
+    font-size: 75%;
+  }
 }
 
 body {

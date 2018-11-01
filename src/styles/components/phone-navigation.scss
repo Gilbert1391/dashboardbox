@@ -1,0 +1,20 @@
+.phone-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  color: #737783;
+
+  &__item {
+    margin: 0.5rem 1rem;
+  }
+
+  &__link {
+    text-decoration: none;
+    transition: all 300ms;
+
+    &--active {
+      text-decoration: underline;
+      color: #7678fb;
+    }
+  }
+}
