@@ -23,11 +23,15 @@ const MovieCard = ({ movies, showGenres, loading, bounceEffect }) => {
       <div className="flex-center">
         {bounceEffect ? (
           <Fade>
-            <h2>There are no movies in the data base.</h2>
+            <h2 style={{ color: "#faca31" }}>
+              There are no movies in the data base.
+            </h2>
           </Fade>
         ) : (
           <Bounce>
-            <h2>There are no movies in the data base.</h2>
+            <h2 style={{ color: "#faca31" }}>
+              There are no movies in the data base.
+            </h2>
           </Bounce>
         )}
       </div>

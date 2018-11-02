@@ -36,7 +36,7 @@ class Dashboard extends Component {
     setTimeout(() => this.setState({ loading: false }), 2000);
   }
 
-  handlerHomeBtn = () => {
+  handleHomeBtn = () => {
     this.props.history.push("/");
   };
 
@@ -101,18 +101,18 @@ class Dashboard extends Component {
                       <span key={m.id}>{m.name} / </span>
                     ))}
                     <span>{movie.release_date} / </span>
-                    <span>{`${movie.runtime}min`}</span>
+                    <span>{!movie.runtime ? "" : `${movie.runtime}min`}</span>
                   </div>
                   <a
                     href={`https://www.themoviedb.org/movie/${movie.id}/cast`}
                     className="dashboard__casting"
                     target="_blank"
                   >
-                    View Casting
+                    Full Cast
                   </a>
                   <div className="dashboard__btn-group">
                     <a
-                      onClick={this.handlerHomeBtn}
+                      onClick={this.handleHomeBtn}
                       className="dashboard__btn dashboard__btn--home"
                     >
                       <div className="dashboard__icon">
@@ -142,7 +142,7 @@ class Dashboard extends Component {
                     )}
                   </div>
                 </div>
-                <p>{movie.overview}</p>
+                <p className="dashboard__overview">{movie.overview}</p>
               </div>
             </section>
           </React.Fragment>

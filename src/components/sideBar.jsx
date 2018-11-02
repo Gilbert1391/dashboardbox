@@ -1,8 +1,7 @@
 import React from "react";
 import moviedbLogo from "../img/moviedb.png";
 
-const SideBar = props => {
-  const { items, onItemSelect, selectedItem } = props;
+const SideBar = ({ items, onItemSelect, selectedItem }) => {
   return (
     <nav className="sidebar">
       <ul className="side-nav">
@@ -42,7 +41,7 @@ const SideBar = props => {
           >
             Gilbert Rosario.
           </a>{" "}
-          All rights reserved. View on{" "}
+          All rights reserved. View project on{" "}
           <a
             href="https://github.com/Gilbert1391/Movie-Dashboard"
             target="_blank"

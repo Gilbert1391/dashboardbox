@@ -5,6 +5,7 @@ const Header = ({ value, onSearch, onValueSelect, sortValue }) => {
   return (
     <header className="header">
       <span className="header__logo-name">Dashboard Box</span>
+      <span className="header__logo-phone">- Box</span>
       <form className="search">
         <input
           className="search__input"

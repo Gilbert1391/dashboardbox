@@ -62,13 +62,15 @@ html {
   }
 
   @include responsive(big-desktop) {
-    //widh < 1800px?
+    //widh >= 1800px?
     font-size: 75%;
   }
 }
 
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+
 body {
-  font-family: "Nunito", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
   color: #7678fb;
   font-weight: 400;

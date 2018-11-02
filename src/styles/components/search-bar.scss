@@ -17,6 +17,10 @@
     transition: all 200ms;
     margin-right: -3rem;
 
+    @include responsive(tab-port) {
+      width: 100%;
+    }
+
     &:focus {
       width: 100%;
       outline: none;

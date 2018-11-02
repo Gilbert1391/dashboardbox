@@ -19,11 +19,32 @@
   padding: 0 2rem;
   border-top-right-radius: 1.5rem;
   border-top-left-radius: 1.5rem;
+
+  &__logo-name {
+    color: #faca31;
+    padding: 0.3rem 0.6rem;
+    border: 1px solid;
+    border-radius: 3px;
+    @include responsive(tab-port) {
+      display: none;
+    }
+  }
+  &__logo-phone {
+    display: none;
+    @include responsive(tab-port) {
+      display: block;
+      color: #faca31;
+      padding: 0.3rem 0.6rem;
+      border: 1px solid;
+      border-radius: 3px;
+    }
+  }
 }
 
 .phone-fixed-header {
   display: block;
   @include responsive(tab-port) {
+    width: 100%;
     position: fixed;
     top: 0;
     z-index: 20;
@@ -64,7 +85,7 @@
   }
 
   @include responsive(phone) {
-    margin-top: 16rem;
+    margin-top: 9rem;
   }
 }
 
@@ -89,13 +110,28 @@
   }
 }
 
+.phone-nav-container {
+  display: none;
+
+  @include responsive(tab-port) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: #242126;
+    font-weight: 700;
+    padding: 0.6rem 2rem;
+    background-color: #faca31;
+  }
+}
+
 .phone-nav {
   display: none;
 
   @include responsive(tab-port) {
     display: block;
-    background-color: #0c0f26;
-    padding: 0 0.5rem;
+    background-color: #171934;
+    padding: 0.5rem;
   }
 }
 
@@ -141,4 +177,9 @@
     background-color: #faca31;
     padding: 1.5rem 3.5rem;
   }
+}
+
+.not-found {
+  padding: 1rem;
+  color: #edf2f5;
 }

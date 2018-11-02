@@ -20,8 +20,13 @@
     color: #737783;
 
     @include responsive(tab-port) {
+      width: 65%;
       display: block;
       margin: 0 auto;
+    }
+
+    @include responsive(phone) {
+      width: 80%;
     }
   }
 

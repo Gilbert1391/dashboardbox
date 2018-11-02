@@ -12,7 +12,7 @@ import Movies from "./components/movies";
 import Dashboard from "./components/dashboard";
 import notFound from "./components/notFound";
 import "react-toastify/dist/ReactToastify.css";
-import "./App.css";
+import "./App.scss";
 
 class App extends Component {
   state = {
@@ -53,7 +53,7 @@ class App extends Component {
 
     const theater = [].concat.apply([], data3.map(movie => movie.data.results));
 
-    let moviesData = { ...this.state.moviesData };
+    const moviesData = { ...this.state.moviesData };
     moviesData.popularMovies = popular;
     moviesData.topRatedMovies = topRated;
     moviesData.theaterMovies = theater;

@@ -7,24 +7,22 @@ import { paginate } from "../utils/paginate";
 import PhoneNav from "./phoneNav";
 import PhoneFooter from "./phoneFooter";
 
-const Movies = props => {
-  const {
-    filtered,
-    genres,
-    pageSize,
-    currentPage,
-    sortValue,
-    loading,
-    bounce,
-    selectedGenre,
-    searchQuery,
-    onPageChange,
-    onGenreSelect,
-    onSearch,
-    onGenres,
-    onSortValue
-  } = props;
-
+const Movies = ({
+  filtered,
+  genres,
+  pageSize,
+  currentPage,
+  sortValue,
+  loading,
+  bounce,
+  selectedGenre,
+  searchQuery,
+  onPageChange,
+  onGenreSelect,
+  onSearch,
+  onGenres,
+  onSortValue
+}) => {
   const movies = paginate(filtered, currentPage, pageSize);
 
   return (
