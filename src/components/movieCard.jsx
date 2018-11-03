@@ -1,43 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ClipLoader } from "react-spinners";
-import { Fade, Bounce } from "react-reveal";
+import { Fade } from "react-reveal";
 import placeholderImg from "../img/placeholder-img.jpg";
 
-const MovieCard = ({ movies, showGenres, loading, bounceEffect }) => {
-  if (movies.length === 0 && loading) {
-    return (
-      <div className="flex-center">
-        <div className="sweet-loading">
-          <ClipLoader
-            sizeUnit={"px"}
-            size={50}
-            color={"#faca31"}
-            loading={loading}
-          />
-        </div>
-      </div>
-    );
-  } else if (movies.length === 0 && !loading) {
-    return (
-      <div className="flex-center">
-        {bounceEffect ? (
-          <Fade>
-            <h2 style={{ color: "#faca31" }}>
-              There are no movies in the data base.
-            </h2>
-          </Fade>
-        ) : (
-          <Bounce>
-            <h2 style={{ color: "#faca31" }}>
-              There are no movies in the data base.
-            </h2>
-          </Bounce>
-        )}
-      </div>
-    );
-  }
-
+const MovieCard = ({ movies, showGenres }) => {
   return (
     <section className="flex-grid">
       {movies.map(movie => (

@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import { key } from "../services/movieService";
+import { movieUrl, key } from "../services/movieService";
 import { Fade } from "react-reveal";
 import { ClipLoader } from "react-spinners";
 import http from "../services/httpService";
 import StarRatingComponent from "react-star-rating-component";
-
-const apiUrl = "https://api.themoviedb.org/3/movie/";
 
 class Dashboard extends Component {
   state = {
@@ -17,15 +15,15 @@ class Dashboard extends Component {
   };
 
   async componentDidMount() {
-    const queryString = `${apiUrl}${
+    const queryString = `${movieUrl}${
       this.props.match.params.id
-    }?api_key=${key}&append_to_response=credits`;
+    }?api_key=${key}`;
 
     const { data: movie } = await http.get(queryString);
     const genres = movie.genres;
     const fixed_rating = movie.vote_average.toFixed(1);
 
-    const videoUrl = `${apiUrl}${movie.id}/videos?api_key=${key}`;
+    const videoUrl = `${movieUrl}${movie.id}/videos?api_key=${key}`;
     const { data: videos } = await http.get(videoUrl);
     const trailer = videos.results[0];
 

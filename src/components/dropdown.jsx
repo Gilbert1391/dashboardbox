@@ -3,12 +3,7 @@ import React from "react";
 const Dropdown = ({ sortValue, onValueSelect }) => {
   return (
     <div className="dropdown">
-      <input
-        type="submit"
-        id="dropdown-input"
-        className="dropdown__input"
-        value={sortValue}
-      />
+      <input type="submit" className="dropdown__input" value={sortValue} />
       <ul className="dropdown__content">
         <li
           className="dropdown__item"

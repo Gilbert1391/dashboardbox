@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import {
-  popularMovies,
-  topRatedMovies,
-  theaterMovies
-} from "./services/movieService";
+import { moviesData, queries, getData } from "./services/movieService";
 import { getGenres } from "./services/genreService";
 import http from "./services/httpService";
 import Movies from "./components/movies";
@@ -16,11 +12,7 @@ import "./App.scss";
 
 class App extends Component {
   state = {
-    moviesData: {
-      popularMovies: [],
-      topRatedMovies: [],
-      theaterMovies: []
-    },
+    movies: [],
     genres: [],
     pageSize: 20,
     currentPage: 1,
@@ -31,36 +23,26 @@ class App extends Component {
     bounce: true
   };
 
-  async componentDidMount() {
+  async fetchData(sortMovies, query) {
+    getData(sortMovies, query);
+    console.log(query);
+
     const data = await Promise.all(
-      popularMovies.map(async movie => await http.get(movie))
+      moviesData[sortMovies].map(async movie => await http.get(movie))
     );
 
-    const popular = [].concat.apply([], data.map(movie => movie.data.results));
+    let movies = [].concat.apply([], data.map(movie => movie.data.results));
+    if (movies.length > 200) {
+      movies = movies.slice(0, 200);
+    }
 
-    const data2 = await Promise.all(
-      topRatedMovies.map(async movie => await http.get(movie))
-    );
+    this.setState({ movies });
+  }
 
-    const topRated = [].concat.apply(
-      [],
-      data2.map(movie => movie.data.results)
-    );
-
-    const data3 = await Promise.all(
-      theaterMovies.map(async movie => await http.get(movie))
-    );
-
-    const theater = [].concat.apply([], data3.map(movie => movie.data.results));
-
-    const moviesData = { ...this.state.moviesData };
-    moviesData.popularMovies = popular;
-    moviesData.topRatedMovies = topRated;
-    moviesData.theaterMovies = theater;
-
+  componentDidMount() {
+    this.fetchData("popular_movies", queries.popular);
     const genres = [{ id: "", name: "All genres" }, ...getGenres()];
-
-    this.setState({ moviesData, genres });
+    this.setState({ genres });
   }
 
   handlePageChange = page => {
@@ -81,7 +63,19 @@ class App extends Component {
   };
 
   handleSortValue = value => {
+    let sortMovies = "popular_movies",
+      query = queries.popular;
+
+    if (value === "Top Rated") {
+      sortMovies = "top_movies";
+      query = queries.top_rated;
+    } else if (value === "Now Playing") {
+      sortMovies = "theaters_movies";
+      query = queries.theaters;
+    }
+
     this.setState({ sortValue: value, currentPage: 1 });
+    this.fetchData(sortMovies, query);
   };
 
   handleLoader = item => {
@@ -99,7 +93,7 @@ class App extends Component {
 
   render() {
     const {
-      moviesData,
+      movies,
       genres,
       pageSize,
       currentPage,
@@ -110,15 +104,7 @@ class App extends Component {
       bounce
     } = this.state;
 
-    const { popularMovies, topRatedMovies, theaterMovies } = moviesData;
-
-    let allMovies = popularMovies;
-
-    if (sortValue === "Top Rated") {
-      allMovies = topRatedMovies;
-    } else if (sortValue === "Now Playing") {
-      allMovies = theaterMovies;
-    }
+    const allMovies = movies;
 
     let filtered = allMovies;
 

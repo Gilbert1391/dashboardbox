@@ -1,4 +1,5 @@
 import React from "react";
+import MoviesLoader from "./moviesLoader";
 import MovieCard from "./movieCard";
 import SideBar from "./sideBar";
 import Header from "./header";
@@ -47,12 +48,12 @@ const Movies = ({
           onItemSelect={onGenreSelect}
         />
         <div className="content-flex">
-          <MovieCard
+          <MoviesLoader
             movies={movies}
-            showGenres={onGenres}
             loading={loading}
             bounceEffect={bounce}
           />
+          <MovieCard movies={movies} showGenres={onGenres} />
           <Pagination
             numberOfItems={filtered.length}
             pageSize={pageSize}

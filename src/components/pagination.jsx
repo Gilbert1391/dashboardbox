@@ -22,7 +22,9 @@ const Pagination = props => {
             }
             onClick={() => onPageChange(page)}
           >
-            <a className="pagination__link">{page}</a>
+            <a href="#" className="pagination__link">
+              {page}
+            </a>
           </li>
         ))}
       </ul>

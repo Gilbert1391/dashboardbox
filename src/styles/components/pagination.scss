@@ -27,4 +27,11 @@
       border: 1px solid #737783;
     }
   }
+
+  &__link {
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+    color: inherit;
+  }
 }
