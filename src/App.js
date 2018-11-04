@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { moviesData, queries, getData } from "./services/movieService";
 import { getGenres } from "./services/genreService";
@@ -119,34 +119,36 @@ class App extends Component {
       <React.Fragment>
         <ToastContainer />
         <React.Fragment>
-          <Switch>
-            <Route path="/movie/:id" component={Dashboard} />
-            <Route path="/not-found" component={notFound} />
-            <Route
-              path="/"
-              exact
-              render={props => (
-                <Movies
-                  filtered={filtered}
-                  genres={genres}
-                  pageSize={pageSize}
-                  currentPage={currentPage}
-                  searchQuery={searchQuery}
-                  sortValue={sortValue}
-                  selectedGenre={selectedGenre}
-                  loading={loading}
-                  bounce={bounce}
-                  onPageChange={this.handlePageChange}
-                  onGenreSelect={this.handleGenreSelect}
-                  onSearch={this.handleSearch}
-                  onGenres={this.handleGenres}
-                  onSortValue={this.handleSortValue}
-                  {...props}
-                />
-              )}
-            />
-            <Redirect to="/not-found" />
-          </Switch>
+          <HashRouter>
+            <Switch>
+              <Route path="/movie/:id" component={Dashboard} />
+              <Route path="/not-found" component={notFound} />
+              <Route
+                path="/"
+                exact
+                render={props => (
+                  <Movies
+                    filtered={filtered}
+                    genres={genres}
+                    pageSize={pageSize}
+                    currentPage={currentPage}
+                    searchQuery={searchQuery}
+                    sortValue={sortValue}
+                    selectedGenre={selectedGenre}
+                    loading={loading}
+                    bounce={bounce}
+                    onPageChange={this.handlePageChange}
+                    onGenreSelect={this.handleGenreSelect}
+                    onSearch={this.handleSearch}
+                    onGenres={this.handleGenres}
+                    onSortValue={this.handleSortValue}
+                    {...props}
+                  />
+                )}
+              />
+              <Redirect to="/not-found" />
+            </Switch>
+          </HashRouter>
         </React.Fragment>
       </React.Fragment>
     );
