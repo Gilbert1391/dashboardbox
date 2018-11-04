@@ -2,7 +2,7 @@
 
 This is a movie SPA (Single Page Application) built with [create-react-app](https://github.com/facebook/create-react-app) using [The Movie Database API](https://www.themoviedb.org/documentation/api?language=en-US). My goal with this project was to create a movie dashboard app where you can search,sort and filter movies using real data as well as getting a quick overview of each movie.
 
-[## View Demo](https://dashboardbox.netlify.com/#/)
+## [View Demo](https://dashboardbox.netlify.com/#/)
 
 ## Features
 
