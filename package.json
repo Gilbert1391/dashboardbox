@@ -2,7 +2,6 @@
   "name": "movie-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://Gilbert1391.github.io/dashboardbox",
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.1.3",
@@ -20,8 +19,6 @@
     "react-toastify": "^4.1.0"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
