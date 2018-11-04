@@ -20,4 +20,4 @@ there other libraries that I used but the listed above are the main ones, you ca
 
 The code is open source and available under the [MIT License.](https://opensource.org/licenses/MIT)
 
-Coded by [Gilbert Rosario.](www.gilbertrosario.com)
+Coded by [Gilbert Rosario.](https://gilbertrosario.com/)
