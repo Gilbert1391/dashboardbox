@@ -25,7 +25,6 @@ class App extends Component {
 
   async fetchData(sortMovies, query) {
     getData(sortMovies, query);
-    console.log(query);
 
     const data = await Promise.all(
       moviesData[sortMovies].map(async movie => await http.get(movie))
