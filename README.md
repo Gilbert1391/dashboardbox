@@ -1,20 +1,51 @@
 # Dashboardbox
 
-This is a movie SPA (Single Page Application) built with [create-react-app](https://github.com/facebook/create-react-app) using [The Movie Database](https://www.themoviedb.org/documentation/api?language=en-US) API. My goal with this project was to create a movie dashboard app where you can search,sort and filter movies using real data as well as getting a quick overview of each movie.
+A movie SPA (Single Page Application) built with [Create React App](https://github.com/facebook/create-react-app) using [The Movie Database](https://www.themoviedb.org/documentation/api?language=en-US) API. The goal of this project was to build a movie dashboard where you can search, sort, and filter movies using real data, as well as get a quick overview of each movie.
 
-## [View Demo](https://dashboardbox.netlify.com/#/)
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) v14 or later
+- npm
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/dashboardbox.git
+   cd dashboardbox
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install --legacy-peer-deps
+   ```
+
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+
+The app will open automatically at [http://localhost:3000](http://localhost:3000).
+
+### Build for Production
+
+```bash
+npm run build
+```
 
 ## Features
 
-Besides filtering, sorting and searching, there are others features I implemented in this project, below I provide a list of some very popular libraries that I used to make things easier.
+In addition to filtering, sorting, and searching, there are several other features implemented in this project. Below is a list of the main libraries used:
 
-- lodash to create the pagination component
-- axios for the http request
-- react-toastify to show a message in the UI in case of unexpected errors
-- react-router-dom to handle routing
-- react-reveal for the fade in animation effect
+- **lodash** — used to build the pagination component
+- **axios** — handles HTTP requests
+- **react-toastify** — displays UI notifications in case of unexpected errors
+- **react-router-dom** — manages client-side routing
+- **react-reveal** — provides fade-in animation effects
 
-there other libraries that I used but the listed above are the main ones, you can always see the rest in the package.json file.
+There are other libraries used as well, but the ones listed above are the primary ones. You can find the full list in the `package.json` file.
 
 ## License
 
